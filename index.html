@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - 3D Showcases</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.16/dist/lenis.css">
+</head>
+<body>
+
+    <nav class="project-nav">
+        <button onclick="changeProject(0)" id="btn-0" class="active">Verstärker</button>
+        <button onclick="changeProject(1)" id="btn-1">Tastatur</button>
+        <button onclick="changeProject(2)" id="btn-2">I/O-Platine</button>
+        <button onclick="changeProject(3)" id="btn-3">PID-Regler</button>
+    </nav>
+
+    <canvas id="canvas"></canvas>
+
+    <main>
+        <div class="scroll-text left" id="text-left">
+            <h2 id="title-left">Vorverstärker</h2>
+            <p id="desc-left">Text lädt...</p>
+        </div>
+
+        <div class="scroll-text right" id="text-right">
+            <h2 id="title-right">Endstufe</h2>
+            <p id="desc-right">Text lädt...</p>
+        </div>
+
+        <section class="hero">
+            <h1 id="main-title">Gitarrenverstärker</h1>
+            <p>Scrollen zum Entdecken</p>
+        </section>
+
+        <section class="spacer"></section> 
+        <section class="spacer"></section> 
+
+        <section class="image-section">
+            <img src="models/PCB.png" alt="Detailansicht" id="final-pcb">
+        </section>
+    </main>
+
+    <script src="https://unpkg.com/lenis@1.1.16/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+        const lenis = new Lenis();
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+    </script>
+</body>
+</html>
