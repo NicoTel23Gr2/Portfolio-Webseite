@@ -96,3 +96,54 @@ h1 { font-size: 3.5rem; font-weight: 900; text-transform: uppercase; letter-spac
     border-radius: 15px;
     box-shadow: 0 30px 60px rgba(0,0,0,0.1);
 }
+
+/* Standardmäßig ist die Warnung versteckt */
+#mobile-warning {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(233, 229, 229); /* Dein Seiten-Hintergrund */
+    z-index: 9999; /* Ganz oben auf dem Stack */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.warning-content h1 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-weight: 900;
+}
+
+.warning-content p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+    max-width: 300px;
+}
+
+.warning-content .icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+/* MEDIA QUERY: Aktiviert die Warnung auf mobilen Geräten */
+@media (max-width: 1024px) {
+    #mobile-warning {
+        display: flex;
+    }
+    
+    /* Versteckt den Rest der Seite */
+    main, #canvas, .project-nav {
+        display: none !important;
+    }
+    
+    body {
+        overflow: hidden; /* Verhindert Scrollen */
+        height: 100vh !important;
+    }
+}
